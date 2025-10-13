@@ -3,13 +3,14 @@
         jobs page
         </x-slot:headng>
 
-        <ul>
+        <div class="space-y4">
             @foreach ($jobs as $job)
-            <li>
-                <a href="/jobs/{{$job['id']}}" class= "text-purple-500 hover:underline">
-            <strong>{{$job['title']}}:</strong> Pays {{ $job['salary']}}
-            </li>
-            </a>
+            <a href="/jobs/{{$job['id']}}" class= "block px-4 py-6 border border-gray-200 rounded-lg">
+                <div class="font-bold text-blue-500 text-sm">{{ $job->employer->name }}</div>
+                <div>
+                    <strong>{{$job['title']}}:</strong> Pays {{ $job['salary']}}
+                </div>
+                </a>
             @endforeach
-        </ul>
+        </div>
 </x-layout>
