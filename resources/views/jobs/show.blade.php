@@ -4,8 +4,12 @@
         </x-slot:headng>
 
         <ul>
-<h2 class="font-bold text-lg">{{ $job['title']}}</h2>
+<h2 class="font-bold text-lg">{{ $job->title }}</h2>
 <p>
-    this job pays {{ $job['salary']}} per day
+    this job pays {{ $job->salary }} per day
+</p>
+
+<p>
+    <x-button href="/jobs/{{ $job->id }}/edit"> edit job</x-button>
 </p>
 </x-layout>
